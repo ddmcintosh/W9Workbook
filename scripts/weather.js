@@ -1,64 +1,67 @@
 "use strict";
 
 let cities = [
-    { 
+  {
     name: "Chicago, Illinois",
     coords: {
-    latitude: 41.8781 N,
-    longitude: 87.6298 W,
+      latitude: 41.8781,
+      longitude: 87.6298,
     },
-},
+  },
 
-{ 
+  {
     name: "Dallas, Texas",
     coords: {
-    latitude: 32.7767 N,
-    longitude: 96.7970 W,
+      latitude: 32.7767,
+      longitude: 96.797,
     },
-},
+  },
 
-{
+  {
     name: "Los Angeles, California",
     coords: {
-    latitude: 34.0522 N,
-    longitude: 118.2437 W,
-    }, 
-},
+      latitude: 34.0522,
+      longitude: 118.2437,
+    },
+  },
 
-{
+  {
     name: "Miami, Florida",
     coords: {
-    latitude: 25.7617 N,
-    longitude: 80.1918 W,
-    }, 
-},
+      latitude: 25.7617,
+      longitude: 80.1918,
+    },
+  },
 
-{
+  {
     name: "New York, New York",
     coords: {
-    latitude: 40.7128 N,
-    longitude: 74.0060 W,
-    }, 
-},
+      latitude: 40.7128,
+      longitude: 74.006,
+    },
+  },
+];
 
- ];
-
-window.onload = init; 
+window.onload = init;
 
 function init() {
-    const searchBtn = document.getElementById("searchBtn");
-    searchBtn.onclick = SearchBtnOnClick;
+  const searchBtn = document.getElementById("searchBtn");
+  searchBtn.onclick = SearchBtnOnClick;
 
-    const searchTypeDropdown = document.getElementById("searchTypeDropdown");
-    searchTypeDropdown.onclick = SearchTypeDropDownOnClick;
+  const searchTypeDropdown = document.getElementById("searchTypeDropdown");
+
+  for (let city of cities) {
+    let option = new Option(city.name, city.name);
+    searchTypeDropdown.appendChild(option);
+  }
 }
 
-SearchBtnOnClick () {
-    const searchBtn = document.getElementById("searchBtn");
+function SearchBtnOnClick() {
+  const divResults = document.getElementById("divResults");
 
-
+  const searchTypeDropdown = document.getElementById("searchTypeDropdown");
 }
 
-SearchTypeDropDownOnClick() {
-    const searchTypeDropdown = document.getElementById("searchTypeDropdown");
+function SearchTypeDropDownOnClick() {
+  const searchTypeDropdown = document.getElementById("searchTypeDropdown");
 }
